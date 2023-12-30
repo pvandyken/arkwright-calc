@@ -30,7 +30,8 @@ const Help = () => {
               </p>
               <p>
                 If <i>supply</i> is not set (e.g. left as &ldquo;<b>-</b>
-                &rdquo;), it will default as equal to player&rsquo;s <i>appeal</i>.
+                &rdquo;), it will default as equal to player&rsquo;s{" "}
+                <i>appeal</i>.
               </p>
               <p>
                 If multiple players tie for sale allocation, all tied players

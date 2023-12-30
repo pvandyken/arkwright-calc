@@ -34,11 +34,13 @@ const Player = ({
 }) => (
   <Grid
     container
+    marginTop="0.5em"
     style={{
       backgroundColor: player.color,
       color: getTextColorForBackground(player.color),
     }}
     className={styles.row}
+    xs={12}
   >
     <Grid className={styles.playerNameBox} xs={1}>
       <div className={styles.playerName}>{player.name}</div>

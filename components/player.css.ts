@@ -33,7 +33,7 @@ export const playerName = style([
 ]);
 
 export const row = style({
-  marginTop: "0.5em",
+  // marginTop: "0.5em",
   borderRadius: 4,
 });
 

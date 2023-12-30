@@ -14,9 +14,14 @@ const Demand = ({
   onUpdate: (val: number) => void;
 }) => {
   return (
-    <div className={styles.container}>
-      <Grid>Demand</Grid>
-      <Grid container alignItems="center" justifyContent="space-between">
+    <Grid container xs={12} className={styles.container}>
+      <Grid xs={12}>Demand</Grid>
+      <Grid
+        container
+        xs={12}
+        alignItems="center"
+        justifyContent="space-between"
+      >
         <Grid
           xs={10}
           style={{
@@ -44,7 +49,7 @@ const Demand = ({
           {value}
         </Grid>
       </Grid>
-    </div>
+    </Grid>
   );
 };
 

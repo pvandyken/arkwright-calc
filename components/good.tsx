@@ -29,7 +29,12 @@ const Good = ({
     });
   };
   return (
-    <div className={styles.container}>
+    <Grid
+      container
+      spacing="0.5em"
+      marginTop="1em"
+      className={styles.container}
+    >
       <Grid container xs={12}>
         <Grid display="flex" justifyContent="center" xsOffset={1} xs={4}>
           Appeal
@@ -54,7 +59,7 @@ const Good = ({
       ))}
 
       <Demand max={good.maxDemand} value={good.demand} onUpdate={setDemand} />
-    </div>
+    </Grid>
   );
 };
 

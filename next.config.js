@@ -4,11 +4,12 @@ const {
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: process.env.EXPORT_APP ? 'export' : undefined,
   reactStrictMode: true,
-  basePath: '/arkwright-calc',
+  basePath: process.env.BASE_URL,
   modularizeImports: {
     lodash: {
       transform: 'lodash/{{member}}'

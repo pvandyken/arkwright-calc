@@ -4,6 +4,7 @@ import Player from "./player";
 import Demand from "./demand";
 import * as styles from "./good.css";
 import Grid from "./grid";
+import Help from "./help";
 
 const Good = ({
   good,
@@ -36,7 +37,11 @@ const Good = ({
       className={styles.container}
     >
       <Grid container xs={12}>
-        <Grid display="flex" justifyContent="center" xsOffset={1} xs={4}>
+        <Grid display="flex" justifyContent="center" xs={1}>
+          <Help />
+        </Grid>
+
+        <Grid display="flex" justifyContent="center" xs={4}>
           Appeal
         </Grid>
         <Grid display="flex" justifyContent="center" xs={4}>

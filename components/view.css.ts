@@ -7,5 +7,5 @@ export const viewport = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  transition: 'background-color 0.5s'
+  transition: 'background 0.5s'
 })

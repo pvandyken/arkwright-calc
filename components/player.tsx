@@ -57,7 +57,13 @@ const Player = ({
             borderLeft: "2px solid rgba(0,0,0,0.3)",
           }}
         />
-        <Grid xs={isTied ? 2 : 3} className={styles.output}>
+        <Grid
+          xs={isTied ? 2 : 3}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          className={styles.output}
+        >
           {sales}/{(player.supply > 0 ? player.supply : player.appeal) - sales}
         </Grid>
         {isTied ? (

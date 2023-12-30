@@ -1,4 +1,3 @@
-import { flexCenter } from "@/styles/globals.css";
 import { style } from "@vanilla-extract/css";
 
 const infobox = style({
@@ -39,7 +38,6 @@ export const row = style({
 });
 
 export const output = style([
-  flexCenter,
   {
     fontSize: "2.5em",
   },

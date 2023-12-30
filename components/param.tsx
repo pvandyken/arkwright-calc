@@ -21,9 +21,14 @@ const Param = ({
     <Button pos="right" onClick={() => onUpdate(value + 1)}>
       +
     </Button>
-    <div className={styles.display}>
+    <Grid
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      className={styles.display}
+    >
       {typeof maskZero !== "undefined" && value == 0 ? maskZero : value}
-    </div>
+    </Grid>
   </Grid>
 );
 

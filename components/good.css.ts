@@ -5,8 +5,3 @@ export const container = style({
   paddingRight: "1em",
   marginTop: "1em",
 })
-
-export const colTitle = style([
-  "d-flex",
-  "justify-content-center",
-])

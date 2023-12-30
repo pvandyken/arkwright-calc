@@ -20,7 +20,7 @@ const Demand = ({
         <Grid
           xs={10}
           style={{
-            paddingRight: "1em"
+            paddingRight: "1em",
           }}
         >
           <Slider
@@ -34,7 +34,13 @@ const Demand = ({
             }}
           />
         </Grid>
-        <Grid className={styles.result} xs={2}>
+        <Grid
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          className={styles.result}
+          xs={2}
+        >
           {value}
         </Grid>
       </Grid>

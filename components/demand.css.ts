@@ -1,4 +1,3 @@
-import { flexCenter } from "@/styles/globals.css";
 import { style } from "@vanilla-extract/css";
 
 export const container = style({
@@ -6,7 +5,6 @@ export const container = style({
 });
 
 export const result = style([
-  flexCenter,
   {
     fontSize: '3em'
   }

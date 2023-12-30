@@ -29,32 +29,33 @@ const Good = ({
     });
   };
   return (
-    <div  className={styles.container}>
+    <div className={styles.container}>
       <Grid container xs={12}>
-        <Grid className={styles.colTitle} xsOffset={1} xs={4}>
+        <Grid display="flex" justifyContent="center" xsOffset={1} xs={4}>
           Appeal
         </Grid>
-        <Grid className={styles.colTitle} xs={4}>
+        <Grid display="flex" justifyContent="center" xs={4}>
           Supply
         </Grid>
-        <Grid className={styles.colTitle} xs={3}>
+        <Grid display="flex" justifyContent="center" xs={3}>
           Sell/Store
         </Grid>
-
       </Grid>
       {good.players.map((player, i) => (
         <Player
           key={player.name}
           player={player}
           sales={sales.sales[player.name]}
-          isTied={(sales.ties?.findIndex(pl => pl === player.name) ?? -1) >= 0}
+          isTied={
+            (sales.ties?.findIndex((pl) => pl === player.name) ?? -1) >= 0
+          }
           onUpdate={updatePlayers[i]}
         />
       ))}
 
       <Demand max={good.maxDemand} value={good.demand} onUpdate={setDemand} />
     </div>
-  )
+  );
 };
 
 export default Good;

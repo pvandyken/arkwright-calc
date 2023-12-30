@@ -20,7 +20,8 @@ const Help = () => {
                 Appeal calculator for{" "}
                 <a href="https://boardgamegeek.com/boardgame/154825/arkwright">
                   Arkwright
-                </a>.
+                </a>
+                .
               </p>
               <p>
                 Calculate the number of sales allocated to each player based on
@@ -28,8 +29,8 @@ const Help = () => {
                 <i>demand</i> of the good.
               </p>
               <p>
-                If <i>supply</i> is not set (e.g. left as "<b>-</b>"), it will
-                default as equal to player's <i>appeal</i>.
+                If <i>supply</i> is not set (e.g. left as &ldquo;<b>-</b>
+                &rdquo;), it will default as equal to player&rsquo;s <i>appeal</i>.
               </p>
               <p>
                 If multiple players tie for sale allocation, all tied players

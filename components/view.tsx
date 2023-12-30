@@ -3,11 +3,9 @@ import React, { useState } from "react";
 import * as styles from "./view.css";
 import { GoodType, newGood } from "@/lib/good";
 import Good from "./good";
-import { zip } from "lodash";
-import { Box, IconButton, Modal, Tab, Tabs } from "@mui/material";
+import { Tab, Tabs } from "@mui/material";
 // @ts-ignore
 import { useCookies } from "react-cookie";
-import Grid from "./grid";
 import CheckroomIcon from "@mui/icons-material/Checkroom";
 import BreakfastDiningIcon from "@mui/icons-material/BreakfastDining";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
@@ -66,9 +64,10 @@ const View = () => {
         aria-label="basic tabs example"
         variant="fullWidth"
       >
-        {zip(goods, icons).map(([good, Icon]) => (
-          <Tab icon={<Icon />} key={good.name} label={good.name} />
-        ))}
+        {goods.map((good, i) => {
+          const Icon = icons[i];
+          return <Tab icon={<Icon />} key={good.name} label={good.name} />;
+        })}
       </Tabs>
     </main>
   );

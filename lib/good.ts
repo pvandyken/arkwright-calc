@@ -36,7 +36,6 @@ export interface GoodType {
   players: AppealPlayer[];
   demand: number;
   maxDemand: number;
-  color: string;
 }
 
 const playerColors = {
@@ -130,13 +129,11 @@ export const calculateSales = memoize(_calculateSales, (good) =>
 export function newGood(
   good: string,
   maxDemand: number,
-  color: string
 ): GoodType {
   return {
     name: good,
     players: defaultPlayers(),
     demand: 0,
     maxDemand: maxDemand,
-    color: color,
   };
 }

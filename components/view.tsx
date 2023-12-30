@@ -41,22 +41,20 @@ const View = () => {
   const [cookies, setCookie] = useCookies(["arkwright"]);
   const [goods, setGoods] = useState<GoodType[]>(
     cookies.arkwright ??
-      GoodsConfig.map((args) => newGood(args.name, args.maxDemand, args.color))
+      GoodsConfig.map((args) => newGood(args.name, args.maxDemand))
   );
   const icons = GoodsConfig.map((args) => args.icon);
+  const colors = GoodsConfig.map((args) => args.color);
   const [active, setActive] = useState(0);
   const updateGoods = (goods: GoodType[]) => {
-    // setCookie("arkwright", goods);
+    setCookie("arkwright", goods);
     setGoods(goods);
   };
   const updateActiveGood = (newGood: GoodType) => {
     updateGoods(goods.map((good, i) => (i === active ? newGood : good)));
   };
   return (
-    <main
-      className={styles.viewport}
-      style={{ background: goods[active].color }}
-    >
+    <main className={styles.viewport} style={{ background: colors[active] }}>
       <Good good={goods[active]} onUpdate={updateActiveGood} />
       <Tabs
         value={active}

@@ -19,16 +19,13 @@ export function setSupply(player: AppealPlayer, supply: number): AppealPlayer {
   };
 }
 export function defaultPlayers(): AppealPlayer[] {
-  return Object.keys(playerColors).map(
-    (name) =>
-      ({
-        name: name,
-        appeal: 0,
-        supply: 0,
-        color: playerColors[name as keyof typeof playerColors],
-        is_importer: isImporter(name as keyof typeof playerColors)
-      })
-  );
+  return Object.keys(playerColors).map((name) => ({
+    name: name,
+    appeal: 0,
+    supply: 0,
+    color: playerColors[name as keyof typeof playerColors],
+    is_importer: isImporter(name as keyof typeof playerColors),
+  }));
 }
 
 export interface GoodType {
@@ -71,7 +68,9 @@ export function _calculateSales(good: GoodType): {
     good.players,
     (player) => player.appeal * 100 + (player.is_importer ? 0 : 1)
   );
-  const priorities = Object.keys(groupedPlayers).toSorted().toReversed();
+  const priorities = Object.keys(groupedPlayers).toSorted(
+    (a, b) => Number(b) - Number(a)
+  );
 
   let ties: AppealPlayer[] = [];
 
@@ -126,10 +125,7 @@ export const calculateSales = memoize(_calculateSales, (good) =>
   ].join("|")
 );
 
-export function newGood(
-  good: string,
-  maxDemand: number,
-): GoodType {
+export function newGood(good: string, maxDemand: number): GoodType {
   return {
     name: good,
     players: defaultPlayers(),

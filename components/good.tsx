@@ -32,11 +32,9 @@ const Good = ({
   return (
     <Grid
       container
-      spacing="0.5em"
-      marginTop="1em"
       className={styles.container}
     >
-      <Grid container xs={12}>
+      <Grid container xs={12} alignItems="end">
         <Grid display="flex" justifyContent="center" xs={1}>
           <Help />
         </Grid>
